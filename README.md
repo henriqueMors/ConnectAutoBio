@@ -1,2 +1,0 @@
-# ConnectAutoBio
- web app projeto
