@@ -1,7 +1,7 @@
 <?php
 
 	// MailChimp
-	$APIKey = '53bb3bcad3947b9c5b45884b439097f4-us3';  // Grab an API Key from http://admin.mailchimp.com/account/api/
+	//$APIKey = '53bb3bcad3947b9c5b45884b439097f4-us3';  // Grab an API Key from http://admin.mailchimp.com/account/api/
 
 	$listID = 'fd1b8baf3f'; // Grab your List's Unique Id by going to http://admin.mailchimp.com/lists/
 
