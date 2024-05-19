@@ -7,9 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="fonts/icomoon/style.css">
-
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -17,8 +15,6 @@
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="css/aos.css">
-
-  <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
 
   <style>
@@ -80,25 +76,25 @@
             <div class="col-lg-5">
               <div class="feature-car-rent-box-1 form-container">
                 <h3>DADOS INICIAIS</h3>
-                <form id="bmi-form">
+                <form id="bmi-form" action="result.html" method="get">
                   <div class="form-group col-md-12">
                     <label for="idade">Idade</label>
-                    <input type="text" id="idade" placeholder="Insira sua idade. Ex.: 30" class="form-control">
+                    <input type="text" id="idade" name="idade" placeholder="Insira sua idade. Ex.: 30" class="form-control" required>
                   </div>
                   <div class="form-group col-md-12">
                     <label for="peso">Peso (kg)</label>
-                    <input type="text" id="peso" placeholder="Insira seu peso. Ex.: 80" class="form-control">
+                    <input type="text" id="peso" name="peso" placeholder="Insira seu peso. Ex.: 80" class="form-control" required>
                   </div>
                   <div class="form-group col-md-12">
                     <label for="altura">Altura (m)</label>
-                    <input type="text" id="altura" placeholder="Insira sua altura. Ex.: 1.80" class="form-control">
+                    <input type="text" id="altura" name="altura" placeholder="Insira sua altura. Ex.: 1.80" class="form-control" required>
                   </div>
                   <div class="row">
                     <div class="col-lg-8">
-                      <input type="button" value="Submit" class="btn btn-primary" onclick="calculateBMI()">
+                      <input type="submit" value="Submit" class="btn btn-primary">
                     </div>
-                    <div class="col-lg-">
-                      <input type="button" value="Limpar" class="btn btn-secondary" onclick="clearFields()">
+                    <div class="col-lg-4">
+                      <input type="reset" value="Limpar" class="btn btn-secondary">
                     </div>
                   </div>
                 </form>
