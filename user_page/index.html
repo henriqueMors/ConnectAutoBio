@@ -78,24 +78,25 @@
           <div class="row align-items-center centered-container">
             <div class="col-lg-5">
               <div class="feature-car-rent-box-1 form-container">
-                <h3>Dados</h3>
-                <form>
+                <h3>Dados iniciais</h3>
+                <form id="bmi-form">
                   <div class="form-group col-md-12">
                     <label for="idade">Idade</label>
-                    <input type="text" id="idade" placeholder="Insira sua idade" class="form-control">
+                    <input type="text" id="idade" placeholder="Insira sua idade. Ex.: 30" class="form-control">
                   </div>
                   <div class="form-group col-md-12">
-                    <label for="peso">Peso</label>
-                    <input type="text" id="peso" placeholder="Insira seu peso" class="form-control">
+                    <label for="peso">Peso (kg)</label>
+                    <input type="text" id="peso" placeholder="Insira seu peso. Ex.: 80" class="form-control">
                   </div>
                   <div class="form-group col-md-12">
-                    <label for="altura">Altura</label>
-                    <input type="text" id="altura" placeholder="Insira sua altura" class="form-control">
+                    <label for="altura">Altura (m)</label>
+                    <input type="text" id="altura" placeholder="Insira sua altura. Ex.: 1.80" class="form-control">
                   </div>
                   <div class="form-group col-md-12 text-center">
-                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <input type="button" value="Submit" class="btn btn-primary" onclick="calculateBMI()">
                   </div>
                 </form>
+                <div id="bmi-result" class="text-center"></div>
               </div>
             </div>
           </div>
@@ -171,6 +172,7 @@
   <script src="js/bootstrap-datepicker.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/calculateBMI.js"></script> <!-- Include the external JS file -->
 
 </body>
 
