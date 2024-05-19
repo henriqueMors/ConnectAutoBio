@@ -92,8 +92,13 @@
                     <label for="altura">Altura (m)</label>
                     <input type="text" id="altura" placeholder="Insira sua altura. Ex.: 1.80" class="form-control">
                   </div>
-                  <div class="form-group col-md-12 text-center">
-                    <input type="button" value="Submit" class="btn btn-primary" onclick="calculateBMI()">
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <input type="button" value="Submit" class="btn btn-primary" onclick="calculateBMI()">
+                    </div>
+                    <div class="col-lg-">
+                      <input type="button" value="Limpar" class="btn btn-secondary" onclick="clearFields()">
+                    </div>
                   </div>
                 </form>
                 <div id="bmi-result" class="text-center"></div>
