@@ -322,7 +322,7 @@ jQuery(document).ready(function($) {
 
 document.addEventListener('DOMContentLoaded', function() {
 	const navbarItems = [
-	  { name: "IMC", href: "index.html" },
+	  { name: "IMC", href: "cabuser.html" },
 	  { name: "Receitas", href: "receitas.html" },
 	  { name: "Dicas", href: "dicas.html" },
 	  { name: "Profissionais", href: "profissionais.html" },

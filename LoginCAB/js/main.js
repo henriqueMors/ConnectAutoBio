@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         else if (username === 'user@email.com' && password === 'useruser') {
           // Redireciona para a página autenticada
-          window.location.href = '/user_page/index.html';
+          window.location.href = '/user_page/cabuser.html';
           
         } else {
             // Exibe a mensagem de erro
