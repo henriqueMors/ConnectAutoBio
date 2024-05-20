@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Resultados do IMC</title>
+    <title>Connect AutoBio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
-
-
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -43,14 +41,10 @@
                     <div class="col-9 text-right">
                         <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
                         <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                            <ul class="site-menu main-menu js-clone-nav ml-auto">
-                                <li><a href="index.html" class="nav-link">Usuário</a></li>
-                                <li><a href="services.html" class="nav-link">Receitas</a></li>
-                                <li><a href="cars.html" class="nav-link">Dicas</a></li>
-                                <li><a href="about.html" class="nav-link">Profissionais</a></li>
-                                <li class="active"><a href="/LoginCAB/index.html" class="nav-link">Sair</a></li>
+                            <ul class="site-menu main-menu js-clone-nav ml-auto" id="navbar-items">
+                              <!-- Navbar items will be populated by JavaScript -->
                             </ul>
-                        </nav>
+                          </nav>
                     </div>
                 </div>
             </div>
@@ -59,18 +53,41 @@
         <div class="ftco-blocks-cover-1">
             <div class="ftco-cover-1 overlay" style="background-image: url('images/img001.jpeg')">
                 <div class="container">
-                    <div class="row align-items-center centered-container">
-                        <div class="col-lg-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-4 mb-lg-0">
                             <div class="feature-car-rent-box-1 form-container" id="texto_excl">
-                                <h3>Resultados do IMC</h3>
+                                <h3 class="text-center">Resultados do IMC</h3>
                                 <div id="result-info">
+                                    
                                     <!-- The result info will be injected here by JavaScript -->
                                 </div>
+                                <a href="index.html" class="btn btn-primary mt-3">Voltar</a>
+                                      <a class="btn btn-primary mt-3" onclick="sendEmail()">Enviar via Email</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="feature-car-rent-box-1 form-container" id="texto_excl">
                                 <div id="recommendations">
+                                    <h3 class="text-center">Profissional Recomendado</h3>
+                                        <div class="post-entry-1 h-100 person-1">
+                                          
+                                            <img src="images/person_4.jpg" alt="Image"
+                                             class="img-fluid">
+                                        
+                                          <div class="post-entry-1-contents">
+                                            <span class="meta">Nutricionista</span>
+                                            <h2>William OLiveira</h2>
+                                            <p>Nutricionista esportivo especializado em cuidados com o corpo, atuando como personal trainer desde 2008.</p>
+                                            <a href="http://www.willpersonal.com.br">Contato</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      
                                     <!-- The recommendations will be injected here by JavaScript -->
                                 </div>
-                                <a href="index.html" class="btn btn-primary mt-3">Voltar</a>
-                            </div>
+                                </div>
+
+                            
                         </div>
                     </div>
                 </div>
@@ -147,75 +164,5 @@
     <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
     <script src="js/calculateBMI.js"></script> <!-- Include the external JS file -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const params = new URLSearchParams(window.location.search);
-            const idade = params.get('idade');
-            const peso = params.get('peso');
-            const altura = params.get('altura');
-
-            if (idade && peso && altura) {
-                const idadeNum = parseInt(idade, 10);
-                const pesoNum = parseFloat(peso);
-                const alturaNum = parseFloat(altura);
-
-                const imc = (pesoNum / (alturaNum * alturaNum)).toFixed(2);
-                let faixaEtaria;
-                if (idadeNum >= 18 && idadeNum <= 24) {
-                    faixaEtaria = "18-24 anos";
-                } else if (idadeNum >= 25 && idadeNum <= 34) {
-                    faixaEtaria = "25-34 anos";
-                } else if (idadeNum >= 35 && idadeNum <= 44) {
-                    faixaEtaria = "35-44 anos";
-                } else if (idadeNum >= 45 && idadeNum <= 54) {
-                    faixaEtaria = "45-54 anos";
-                } else if (idadeNum >= 55 && idadeNum <= 64) {
-                    faixaEtaria = "55-64 anos";
-                } else {
-                    faixaEtaria = "65 anos ou mais";
-                }
-
-                let resultado = `Seu IMC é ${imc}. `;
-                let faixaIMC;
-                if (imc < 18.5) {
-                    faixaIMC = "Abaixo do peso";
-                } else if (imc >= 18.5 && imc <= 24.9) {
-                    faixaIMC = "Peso normal";
-                } else if (imc >= 25 && imc <= 29.9) {
-                    faixaIMC = "Sobrepeso";
-                } else {
-                    faixaIMC = "Obesidade";
-                }
-                resultado += `Você está na faixa: ${faixaIMC}.`;
-
-                let recomendacoes = '';
-                switch (faixaIMC) {
-                    case 'Abaixo do peso':
-                        recomendacoes = `<p>Recomendações: Alimentação rica em nutrientes e calorias, incluindo carnes magras, nozes, e produtos lácteos integrais. Exercícios de musculação para ganhar massa.</p>`;
-                        break;
-                    case 'Peso normal':
-                        recomendacoes = `<p>Recomendações: Manter uma dieta balanceada e um estilo de vida ativo. Continue praticando exercícios regularmente.</p>`;
-                        break;
-                    case 'Sobrepeso':
-                        recomendacoes = `<p>Recomendações: Dieta com controle de calorias e exercícios regulares. Considerar a consulta a um nutricionista.</p>`;
-                        break;
-                    case 'Obesidade':
-                        recomendacoes = `<p>Recomendações: Consulta com um profissional de saúde para um plano personalizado, dieta rigorosa e programa de exercícios. Monitoramento regular.</p>`;
-                        break;
-                }
-
-                document.getElementById('result-info').innerHTML = `
-                    <p>Idade: ${idade} anos</p>
-                    <p>Peso: ${peso} kg</p>
-                    <p>Altura: ${altura} m</p>
-                    <p>Faixa Etária: ${faixaEtaria}</p>
-                    <p>${resultado}</p>
-                `;
-                document.getElementById('recommendations').innerHTML = recomendacoes;
-            } else {
-                document.getElementById('result-info').innerHTML = `<p>Parâmetros inválidos fornecidos.</p>`;
-            }
-        });
-    </script>
 </body>
 </html>

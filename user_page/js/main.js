@@ -319,3 +319,33 @@ jQuery(document).ready(function($) {
 
 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+	const navbarItems = [
+	  { name: "IMC", href: "index.html" },
+	  { name: "Receitas", href: "receitas.html" },
+	  { name: "Dicas", href: "dicas.html" },
+	  { name: "Profissionais", href: "profissionais.html" },
+	  { name: "Sair", href: "/LoginCAB/index.html", active: true }
+	];
+  
+	const navbar = document.getElementById('navbar-items');
+	navbarItems.forEach(item => {
+	  const li = document.createElement('li');
+	  if (item.active) li.classList.add('active');
+	  const a = document.createElement('a');
+	  a.classList.add('nav-link');
+	  a.href = item.href;
+	  a.textContent = item.name;
+	  li.appendChild(a);
+	  navbar.appendChild(li);
+	});
+  });
+  
+  function sendEmail() {
+	const idade = document.getElementById('idade').value;
+	const peso = document.getElementById('peso').value;
+	const altura = document.getElementById('altura').value;
+	const body = `Idade: ${idade}%0APeso: ${peso} kg%0AAltura: ${altura} m`;
+	window.location.href = `mailto:?subject=Dados Iniciais&body=${body}`;
+  }
