@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	  { name: "Receitas", href: "receitas.html" },
 	  { name: "Dicas", href: "dicas.html" },
 	  { name: "Profissionais", href: "profissionais.html" },
-	  { name: "Sair", href: "/LoginCAB/index.html", active: true }
+	  { name: "Sair", href: "/LoginCAB/login.html", active: true }
 	];
   
 	const navbar = document.getElementById('navbar-items');
