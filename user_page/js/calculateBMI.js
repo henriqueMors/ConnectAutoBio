@@ -118,6 +118,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        document.getElementById('result-info').innerHTML = resultado + recomendacoes;
+        const resultInfo = document.getElementById('result-info');
+        resultInfo.innerHTML = resultado + recomendacoes;
+        resultInfo.style.color = 'black';  // Define a cor do texto como preto
+
+    } else {
+        const resultInfo = document.getElementById('result-info');
+        resultInfo.innerHTML = `<p>Parâmetros inválidos fornecidos.</p>`;
+        resultInfo.style.color = 'black';  // Define a cor do texto como preto
     }
 });
