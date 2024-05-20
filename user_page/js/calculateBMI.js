@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const idade = params.get('idade');
     const peso = params.get('peso');
     const altura = params.get('altura');
+    const resultInfo = document.getElementById('result-info');
+        resultInfo.innerHTML = `<p>Parâmetros inválidos fornecidos.</p>`;
+        resultInfo.style.color = 'black';  // Define a cor do texto como preto
 
     if (idade && peso && altura) {
         const idadeNum = parseInt(idade, 10);

@@ -1,6 +1,8 @@
 /* Base */
 
-
+p {
+  color: #000;
+}
 
 html {
   overflow-x: hidden; }
@@ -1242,7 +1244,7 @@ h1, h2, h3, h4, h5,
       color: #fff;
       font-size: 3rem; }
     .ftco-cover-1.overlay p {
-      color: #fff; }
+      color: #000; }
       .ftco-cover-1.overlay p a {
         color: #fff;
         text-decoration: underline;
